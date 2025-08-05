@@ -22,6 +22,7 @@ interface InstructorsPageProps {
   instructors?: Instructor[]    
 }
 
+
 export default function InstructorsPage({ instructors }: InstructorsPageProps) {
   const { stats, loading, errors, refreshData, setInstructors } = useOptimizedData()
 

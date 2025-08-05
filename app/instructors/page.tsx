@@ -1,9 +1,17 @@
 import React from 'react'
 import InstructorsPage from './_components/instructor-page'
-import { instructorAPI } from '@/lib/api-prisma'
-
+import { prisma } from '@/lib/prisma'
 const page = async () => {
-  const instructors = await instructorAPI.getInstructors()
+ 
+   const instructors : any = await prisma.instructor.findMany({
+        include: {
+          _count: {
+            select: { courses: true },
+          },
+        },
+        orderBy: { name: "asc" },
+      })
+      
 console.log("Fetched instructors:", instructors)
   return (
     <div>
