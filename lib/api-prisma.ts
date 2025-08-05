@@ -1,3 +1,4 @@
+"use server"
 import { prisma } from "./prisma"
 import type { Course, Instructor, Tag, CourseFormData, InstructorFormData, TagFormData } from "@/types"
 
