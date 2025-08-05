@@ -7,7 +7,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Plus, Tag } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
-import { tagAPI } from "@/lib/api-prisma"
 import { useOptimizedData } from "@/hooks/use-optimized-data"
 import { MemoizedTagRow } from "@/components/memoized-components"
 import { PageLoadingSkeleton, ErrorState, InlineLoader } from "@/components/optimized-loading-states"
@@ -194,7 +193,7 @@ export const TagsPage = ({ tags }: TagsPageProps) => {
                   {tags?.map((tag) => (
                     <MemoizedTagRow
                       key={tag.id}
-                      tag={tag}
+                      tag={tag as any}
                       usageCount={tag._count?.courseTags || 0}
                       onEdit={handleEditTag}
                       onDelete={handleDeleteTag}

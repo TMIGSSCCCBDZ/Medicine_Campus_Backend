@@ -1,9 +1,11 @@
+export const dynamic = "force-dynamic";
+
 import React from 'react'
 import {TagsPage} from './_components/tag-form'
-import { tagAPI } from '@/lib/api-prisma'
 import { prisma } from '@/lib/prisma'
+
 export default async function Page() {
-  const tags = await prisma.tag.findMany({
+  const tags : any = await prisma.tag.findMany({
         include: {
           
           _count: {
