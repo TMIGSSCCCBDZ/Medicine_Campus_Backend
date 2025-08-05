@@ -39,8 +39,8 @@ export function useOptimizedData() {
 
     // Tag usage count
     const tagUsage = courses.reduce(
-      (acc, course) => {
-        course.tags.forEach((tag) => {
+      (acc, course): any => {
+        (course as any).tags.forEach((tag: any) => {
           acc[tag.name] = (acc[tag.name] || 0) + 1
         })
         return acc

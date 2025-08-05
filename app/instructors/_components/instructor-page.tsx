@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Plus, Users } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
-import { instructorAPI } from "@/lib/api-prisma"
 import { useOptimizedData } from "@/hooks/use-optimized-data"
 import { MemoizedInstructorRow } from "@/components/memoized-components"
 import { PageLoadingSkeleton, ErrorState, InlineLoader } from "@/components/optimized-loading-states"
