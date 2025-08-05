@@ -1,4 +1,3 @@
-"use server"
 import React from 'react'
 import InstructorsPage from './_components/instructor-page'
 import { prisma } from '@/lib/prisma'
