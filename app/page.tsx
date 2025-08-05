@@ -1,4 +1,3 @@
-import { CourseForm } from '@/components/course-form'
 import React from 'react'
 import CoursesPage from './_components/course-form'
 import {prisma} from '@/lib/prisma'
