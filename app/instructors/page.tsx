@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import React from 'react'
 import InstructorsPage from './_components/instructor-page'
 import { prisma } from '@/lib/prisma'
