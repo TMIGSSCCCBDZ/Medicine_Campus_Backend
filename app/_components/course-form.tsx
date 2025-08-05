@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Plus, BookOpen } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
-import { courseAPI } from "@/lib/api-prisma"
 import { useOptimizedData } from "@/hooks/use-optimized-data"
 import { MemoizedStatsCards, MemoizedCourseTable } from "@/components/memoized-components"
 import { PageLoadingSkeleton, ErrorState, InlineLoader } from "@/components/optimized-loading-states"
@@ -49,14 +48,14 @@ export default function CoursesPage({ courses, instructors, tags }: CoursesPageP
       setFormLoading(true)
       try {
         if (editingCourse) {
-          await courseAPI.updateCourse(editingCourse.id, courseData)
+          await axios.patch(`/api/courses/${editingCourse.id}/edit`, courseData)
 
           toast({
             title: "Success",
             description: "Course updated successfully",
           })
         } else {
-          await courseAPI.createCourse(courseData)
+          await axios.post("/api/courses/create", courseData)
 
           toast({
             title: "Success",
