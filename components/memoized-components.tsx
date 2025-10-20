@@ -97,7 +97,7 @@ export const MemoizedCourseRow = memo(function CourseRow({
         </TableCell>
         <TableCell>
           <div className="flex flex-wrap gap-1">
-            {displayTags?.map((tag, index) => (
+            {displayTags?.map((tag:any, index:any):any => (
 
               <Badge key={index} variant="outline" className="text-xs">
                 {tag.tag.name}

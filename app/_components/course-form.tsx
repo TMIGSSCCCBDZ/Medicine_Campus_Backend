@@ -73,6 +73,7 @@ export default function CoursesPage({ courses, instructors, tags }: CoursesPageP
         })
         throw error
       } finally {
+
         setFormLoading(false)
       }
     },
@@ -124,7 +125,7 @@ export default function CoursesPage({ courses, instructors, tags }: CoursesPageP
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h1 className="text-3xl font-bold">Courses</h1>
-          <p className="text-muted-foreground">Manage your online courses</p>
+          <p className="text-muted-foreground">Manage Your Online Courses</p>
         </div>
         <Button onClick={handleCreateCourse} className="w-full sm:w-auto">
           <Plus className="w-4 h-4 mr-2" />
